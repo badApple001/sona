@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/EDZ/Desktop/Sona/sona.html -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+  <title>Sona | 游戏程序员的自我修养</title>
+  <meta name="generator" content="Jekyll v3.9.0">
+  <meta property="og:title" content="excel2json">
+  <meta name="author" content="ChenJC">
+  <meta property="og:locale" content="en_US">
+  <meta name="description" content="不追热点 不赶时髦 专注研究游戏引擎技术">
+  <meta property="og:description" content="不追热点 不赶时髦 专注研究游戏引擎技术">
+  <meta property="og:site_name" content="游戏程序员的自我修养">
+  <meta name="twitter:card" content="summary">
+  <meta property="twitter:title" content="excel2json">
+  <script src="./sona_files/hm.js.下载"></script>
+  <script src="./sona_files/hm.js(1).下载"></script>
+  <script src="./sona_files/hm.js(2).下载"></script>
+  <script type="application/ld+json">
+{"author":{"@type":"Person","name":"陈杰朝"},"description":"不追热点 不赶时髦 专注研究游戏引擎技术","url":"","@type":"WebPage","headline":"excel2json","@context":""}</script>
+  <!-- End Jekyll SEO tag -->
+
+
+  <link rel="stylesheet" href="file:///C:/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="file:///C:/assets/css/reading.css">
+  <link rel="stylesheet" href="./sona_files/main.css">
+  <link rel="alternate" type="application/rss+xml" title="游戏程序员的自我修养">
+  <link rel="stylesheet" href="file:///C:/assets/css//font-awesome.min.css">
+  <link rel="icon" href="file:///C:/favicon.ico">
+
+  <script src="file:///C:/assets/js/jquery.min.js"></script>
+  <script src="file:///C:/assets/js/bootstrap.min.js"></script>
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c3709a8b8c6b1e793f1d1ba9e08289e7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="navbar-brand" style="color:#03a9f4;">游戏程序员的自我修养</span>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <div class="menu">
+
+            </div>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <div class="post-container">
+      <h1 id="excel2json">娑娜</h1>
+
+      <p>在游戏项目中一般都需要由策划制作大量的游戏内容，其中很大一部分是使用Excel表来制作的。于是程序就需要把Excel文件转换成程序方便读取的格式。</p>
+
+      <p>之前项目使用的Excel表导入工具都是通过Office
+        Excel组件来实现数据访问的，效率十分令人不满。一个端游项目一般要上百个表格，手游项目20、30个表格基本也是要的，于是表格导入程序的过程一般要几分钟，项目后期要接近半个小时。这里分享的这个小工具，在速度上有质的飞越，比上述方法实现的工具有<strong>接近100倍的速度提升</strong>.
+      </p>
+
+      <h3 id="版本更新">版本更新</h3>
+
+      <ul>
+        <li>最新版： <strong>1.0.1</strong></li>
+        <li>更新日期：<strong>2021年5月4日</strong></li>
+
+
+      </ul>
+
+      <h3 id="主要功能">主要功能：</h3>
+
+      <ul>
+        <li>支持读取 Excel 97-2003的 .xls格式和2007的 .xlsx格式；</li>
+        <li>支持多个表单导出；</li>
+        <li>把Excel表单转换成Json对象，并保存到一个文本文件中。支持将表中内容转换成<strong>Array</strong>，或者以第一列为ID的<strong>字典对象</strong>；</li>
+        <li>将表头信息生成 C# 结构体定义代码；</li>
+        <li>进阶特性
+          <ul>
+            <li>通过特定的前缀排除掉表单或者列</li>
+            <li>自动识别和转换单元格内的 Json 格式字符串，并转换成为 Json Array 或者 Json Object</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3 id="支持gui模式和命令行模式">支持GUI模式和命令行模式</h3>
+
+      <p>GUI模式方便预览；而命令行式，方便将多个表格转换工作写成一个批处理文件（.bat或者.sh），一键处理几十个表格。
+        例如，使用下面这个.bat批处理文件，可以一次性转换”.\excel”目录下所有的.xlsx文件到”.\json”目录：</p>
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>@SET EXCEL_FOLDER=.\excel
+@SET JSON_FOLDER=.\json
+@SET EXE=.\excel2json.exe
+
+@ECHO Converting excel files in folder %EXCEL_FOLDER% ...
+for /f "delims=" %%i in ('dir /b /a-d /s %EXCEL_FOLDER%\*.xlsx') do (
+    @echo   processing %%~nxi
+    @CALL %EXE% --excel %EXCEL_FOLDER%\%%~nxi --json %JSON_FOLDER%\%%~ni.json --header 3
+)
+</code></pre>
+        </div>
+      </div>
+
+      <p><img src="./sona_files/gui.png" alt="excel2json_gui"><br>
+        <img src="file:///C:/assets/img/excel2json/cmd.png" alt="excel2json_cmd">
+      </p>
+
+      <h4 id="命令行参数">命令行参数</h4>
+      <ul>
+        <li>-e, –excel Required. 输入的Excel文件路径.</li>
+        <li>-j, –json 指定输出的json文件路径.</li>
+        <li>-p, –csharp 指定输出的C#文件路径.</li>
+        <li>-h, –header (Default: 3)表格中有几行是表头.</li>
+        <li>-c, –encoding (Default: utf8-nobom) 指定编码的名称.</li>
+        <li>-l, –lowcase (Default: false) 自动把字段名称转换成小写格式.</li>
+        <li>-a 序列化成数组</li>
+        <li>-d, –date:指定日期格式化字符串，例如：dd / MM / yyy hh: mm:ss</li>
+        <li>-s 序列化时强制带上sheet name，即使只有一个sheet</li>
+        <li>-exclude_prefix： 导出时，排除掉包含指定前缀的表单和列，例如：-exclude_prefix #</li>
+        <li>-cell_json：自动识别单元格中的Json对象和Json数组，Default：false</li>
+      </ul>
+
+      <p>例如：<strong>excel2json –excel test.xlsx –json test.json –header 3 –array true</strong>，其中的输入和输出文件，都在当前目录下；</p>
+
+      <h3 id="excel表单格式约定">Excel表单格式约定</h3>
+
+      <p><img src="./sona_files/example.png" alt="excel2json_example"></p>
+
+      <ul>
+        <li>第一行固定作为列名（用来构造json字段名称）；</li>
+        <li>第一列固定作为对象的ID；</li>
+        <li>读取Excel Workbook中的第一个sheet；</li>
+        <li>对于SQL导出模式：第二行固定为字段类型</li>
+        <li>使用表头生成C#数据定义代码</li>
+      </ul>
+
+
+
+
+      <ul>
+
+
+      </ul>
+
+
+    </div>
+
+  </div>
+
+
+  <footer>
+
+  </footer>
+
+
+
+
+</body>
+
+</html>
